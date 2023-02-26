@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block  title %}
+    K9 - All Club Members
+{% endblock  %}
+
+{% block sidebar %}
+<div class="sidebar">
+    <h4>Search for:</h4>
+    {% include "search.html" %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock sidebar %}
+
+{% block content %}
+    {% include "memberlist.html" %}
+{% endblock content %}
+

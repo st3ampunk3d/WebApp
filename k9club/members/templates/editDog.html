@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<div class="sidebar">
+<div class="sideNav">
+    <img src="/media/{{ dog.photo }}"/> 
+    <h2>{{ mydog.name }}</h2>
+    <ul class="details">
+        <li>Registration #: {{ dog.id|add:"20000" }}</li>
+        {% for member in mymembers %}
+            {% if member.id == dog.owner_id %}
+                <li>Registered To: {{ member.name }}</li>
+            {% endif %}
+        {% endfor %}
+        <li>Age: {{ dog.dob|timesince }}</li>
+        <li>Color: {{ dog.color }}</li>
+        {% for breed in breeds %}
+            {% if breed.id == dog.breed_id %}
+                <li>Breed: {{ breed.name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul><br><br>
+</div>
+<a href="/dogs/delete/dog={{ dog.id }}"><div class="button">Remove Dog</div></a>
+</div>
+{% endblock sidebar %}
+
+{% block content %}
+    <div class="right">
+    <form method="post" enctype="multipart/form-data">
+        <h2>Edit Dog Info</h2>
+        <hr>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Update</button>
+    </form>
+    </div>
+{% endblock %}

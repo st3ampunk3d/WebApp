@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{mymember.name}}
+{% endblock title %}
+
+{% block sidebar %}
+<div class="sidebar">
+    {% include 'memberDetail.html' %}
+    <a href="/members/update/member={{ mymember.id }}"><div class="button">Update Member</div></a><br>
+    <a href="/members/delete/member={{ mymember.id }}"><div class="button">Remove Member</div></a>
+</div>
+{% endblock sidebar %}
+
+{% block content %}
+    <div class="right">
+    <div class="content-grid">
+    {% include "doglist.html" %}
+    {% for n in placeholder %}
+        <a href="{% url 'register' mymember.id %}">
+        <div class="smallCard placeholder">
+            <img src="/media/images/dogs/nophoto.png"/>
+        </div>
+        </a>
+    {% endfor %}
+    </div></div>
+{% endblock content %}

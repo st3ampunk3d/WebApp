@@ -1,0 +1,11 @@
+{% if '/members/' in request.path %}
+<form class="search" method=POST action="{% url 'search-members' %}">
+{% else %}
+<form class="search" method=POST action="{% url 'search-dogs' %}">
+{% endif %}
+    {% csrf_token %}
+    <input type="search" placeholder="Search Criteria" name="searched"><br>
+    <button type="submit">Search</button>
+</form>
+
+    

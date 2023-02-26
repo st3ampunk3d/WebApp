@@ -1,0 +1,24 @@
+
+<div class="right">
+<div class="content-grid">
+    {% if request.path == "/members/" %}
+    <a href="{% url 'new-member' %}">
+        <div class="smallCard">
+            <img src="/media/images/people/newMember.png">
+            <h2>Add Member</h2>
+        </div>
+    </a>
+    {% endif %}
+    {% for member in mymembers %}
+        <a href="/members/member={{ member.id }}">
+        <div class="smallCard">
+            <img src="/media/{{ member.photo }}"/> 
+            <h2>{{ member.name }}</h2>
+            <ul>
+            <li>ID #: {{ member.id|add:"10000" }}</li>
+            </ul>
+        </div>
+        </a>
+    {% endfor %}
+</div>
+</div>

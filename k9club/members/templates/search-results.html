@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<div class="sidebar">
+    <h4>Results for "{{ searched }}"</h4>
+    {% include "search.html" %}
+    {% if '/members/' in request.path %}
+        <a href="{% url 'members' %}">
+    {% elif '/dogs/' in request.path %}
+        <a href="{% url 'dogs' %}">
+    {% endif %}
+        <div class="button">
+            Show All
+        </div>
+    </a>
+</div>
+{% endblock sidebar %}
+
+{% block content %}
+    {% include "memberlist.html" %}
+{% endblock content %}

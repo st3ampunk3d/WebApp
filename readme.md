@@ -8,12 +8,16 @@ The web application provides the user interface and data management tools for a 
 The intent was to make the software more deployable and accesible to users. All of the dependencies exist on the server instead of on the local computer, eliminating any setup on the end user's part.
 
 ### Running the App:
+Required Pagages:
+ - [Django](https://pypi.org/project/Django/)
+ - [Django Phone Field](https://pypi.org/project/django-phone-field/)
+ 
 After cloning the repository navigate to "/WebApp/k9club"
 Run the command `python manage.py runserver` The development server will start.
 In your browser navigate to: http://127.0.0.1:8000/
 
 ### See it in action:
-Watch the [demo video](http://youtube.link.goes.here) to see the web app in action.
+Watch the [demo video](https://cdnapisec.kaltura.com/index.php/extwidget/preview/partner_id/1157612/uiconf_id/42438192/entry_id/1_ww3diov1/embed/dynamic) to see the web app in action.
 
 
 ## Web Pages

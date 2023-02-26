@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="page-banner">
+      <img
+        alt="still figuring it out"
+        src="https://cdn.glitch.global/5836d8fc-c60f-483e-a5a7-7049cd0eed81/basket.jpg?v=1644105366669"
+      />
+    </div>
+    <section class="action">
+      <h2>Get Involved In Local Shows and Events</h2>
+      <p>
+        The K9 Kennel club hosts a variety of dog shows and events.
+        If you have a passion for all things canine and want to be Involved
+        in the community, come check us out. Members of all ages and dogs of all breeds are welcome.
+      </p>
+      <a class="button" href="{% url 'new-member' %}">Join Our Club</a>
+      <img
+        alt="Dam with pups"
+        src="https://cdn.glitch.global/5836d8fc-c60f-483e-a5a7-7049cd0eed81/banner-min.jpg?v=1643921867846"
+      />
+    </section>
+{% endblock content %}

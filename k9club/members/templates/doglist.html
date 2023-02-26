@@ -1,0 +1,24 @@
+
+    {% for dog in mydogs %}
+        <a href="{% url 'update-dog' id=dog.id %}">
+        <div class="smallCard">
+            <h2>{{dog.name}}</h2>
+            <img src="/media/{{ dog.photo }}"/> 
+            <ul class="details">
+                <li>Registration #: {{ dog.id|add:"20000" }}</li>
+                {% for member in mymembers %}
+                    {% if member.id == dog.owner_id %}
+                        <li>Registered To: {{ member.name }}</li>
+                    {% endif %}
+                {% endfor %}
+                <li>Age: {{ dog.dob|timesince }}</li>
+                <li>Color: {{ dog.color }}</li>
+                {% for breed in breeds %}
+                    {% if breed.id == dog.breed_id %}
+                        <li>Breed: {{ breed.name }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        </a>
+    {% endfor %}

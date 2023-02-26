@@ -1,0 +1,11 @@
+<div class="sideNav">
+    <img src="/media/{{ mymember.photo }}"/> 
+    <h2>{{ mymember.name }}</h2>
+    <ul class="details">
+        <li>ID #: {{ mymember.id|add:"10000" }}</li>
+        <li>Tier: {{ mymember.memberTier }}</li>
+        <li>City: {{ mymember.city }}</li>
+        <li><span class="label">Contact:</span><span class="value">{{ mymember.phone }}</span></li>
+        <span class="value">{{ mymember.email }}</span></li>
+    </ul><br><br>
+</div>

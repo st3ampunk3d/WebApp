@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'idcard.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div id='content'>
+
+    {% block header %}
+        <header>
+          <div class="logo-box">
+            <img
+              alt="K9-Kennel Logo"
+              src="https://cdn.glitch.global/5836d8fc-c60f-483e-a5a7-7049cd0eed81/lab-min.png?v=1643920464799"
+            />
+          </div>
+          <h2>K9 Kennel Club</h2>
+          <nav>
+            <ul>
+              <li><a href="{% url 'main' %}">HOME</a></li>
+              <li><a href="{% url 'members' %}">MEMBERS</a></li>
+              <li><a href="{% url 'dogs' %}">CANINES</a></li>
+            </ul>
+          </nav>
+        </header>
+    {% endblock %}
+
+    <main>
+        {% block sidebar %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+        <footer>
+            <p>&copy; 2023 K9 Kennel Club Mockup | Joshua Beale | Python/Django</p>
+            <a href="site-plan.html">GitHub</a>
+        </footer>
+    {% endblock %}
+    
+</div>
+</body>
+</html> 
